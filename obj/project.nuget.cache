@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "B+//R7O60fs=",
+  "success": true,
+  "projectFilePath": "/home/Jhonn/Documentos/3 Semestre/Web Back-End/projetoFinal_WebBackEnd/projetoFinal_WebBackEnd.csproj",
+  "expectedPackageFiles": [
+    "/home/Jhonn/.nuget/packages/microsoft.aspnetcore.openapi/10.0.9/microsoft.aspnetcore.openapi.10.0.9.nupkg.sha512",
+    "/home/Jhonn/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "O pacote 'Microsoft.OpenApi' 2.0.0 tem uma alta vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
+      "projectPath": "/home/Jhonn/Documentos/3 Semestre/Web Back-End/projetoFinal_WebBackEnd/projetoFinal_WebBackEnd.csproj",
+      "warningLevel": 1,
+      "filePath": "/home/Jhonn/Documentos/3 Semestre/Web Back-End/projetoFinal_WebBackEnd/projetoFinal_WebBackEnd.csproj",
+      "libraryId": "Microsoft.OpenApi",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}
