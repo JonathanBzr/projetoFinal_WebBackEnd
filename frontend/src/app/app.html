@@ -1,0 +1,16 @@
+@if (estaLogado()) {
+  <mat-toolbar color="primary">
+    <span>🐾 Petshop</span>
+    <span class="spacer"></span>
+    <a matButton routerLink="/animais">Animais</a>
+    <a matButton routerLink="/clientes">Clientes</a>
+    <a matButton routerLink="/servicos">Serviços</a>
+    <a matButton routerLink="/agendamentos">Agendamentos</a>
+    <span class="spacer"></span>
+    <button matButton (click)="logout()">Sair</button>
+  </mat-toolbar>
+}
+
+<div class="container">
+  <router-outlet />
+</div>

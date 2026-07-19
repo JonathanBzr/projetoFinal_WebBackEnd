@@ -1,0 +1,37 @@
+<h2>Detalhes do Cliente</h2>
+<hr />
+
+@if (cliente()) {
+  @if (emEdicao()) {
+    <form class="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="cliente()!.nome" name="nome" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Telefone</mat-label>
+        <input matInput [(ngModel)]="cliente()!.telefone" name="telefone" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input matInput type="email" [(ngModel)]="cliente()!.email" name="email" />
+      </mat-form-field>
+      <div class="acoes">
+        <button matButton="filled" type="button" (click)="salvar()">Salvar</button>
+        <button matButton="tonal" type="button" (click)="cancelarEdicao()">Cancelar</button>
+      </div>
+    </form>
+  } @else {
+    <p><strong>ID:</strong> {{ cliente()?.id }}</p>
+    <p><strong>Nome:</strong> {{ cliente()?.nome }}</p>
+    <p><strong>Telefone:</strong> {{ cliente()?.telefone }}</p>
+    <p><strong>E-mail:</strong> {{ cliente()?.email }}</p>
+    <div class="acoes">
+      <button matButton="filled" type="button" (click)="iniciarEdicao()">Editar</button>
+      <button matButton="filled" type="button" (click)="excluir()">Excluir</button>
+      <button matButton="tonal" type="button" (click)="voltar()">Voltar</button>
+    </div>
+  }
+} @else {
+  <p>Cliente não encontrado.</p>
+}

@@ -1,0 +1,2 @@
+.form { display: flex; flex-direction: column; max-width: 480px; gap: 8px; }
+.acoes { display: flex; gap: 8px; margin-top: 8px; }

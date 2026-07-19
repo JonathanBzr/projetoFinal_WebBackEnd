@@ -1,0 +1,42 @@
+<h2>Detalhes do Agendamento</h2>
+<hr />
+
+@if (agendamento()) {
+  @if (emEdicao()) {
+    <form class="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Data e Hora</mat-label>
+        <input matInput type="datetime-local" [(ngModel)]="agendamento()!.dataHora" name="dataHora" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>ID do Animal</mat-label>
+        <input matInput type="number" [(ngModel)]="agendamento()!.animalId" name="animalId" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>ID do Serviço</mat-label>
+        <input matInput type="number" [(ngModel)]="agendamento()!.servicoId" name="servicoId" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Observações</mat-label>
+        <input matInput [(ngModel)]="agendamento()!.observacoes" name="observacoes" />
+      </mat-form-field>
+      <div class="acoes">
+        <button matButton="filled" type="button" (click)="salvar()">Salvar</button>
+        <button matButton="tonal" type="button" (click)="cancelarEdicao()">Cancelar</button>
+      </div>
+    </form>
+  } @else {
+    <p><strong>ID:</strong> {{ agendamento()?.id }}</p>
+    <p><strong>Data / Hora:</strong> {{ agendamento()?.dataHora | date:'dd/MM/yyyy HH:mm' }}</p>
+    <p><strong>Animal (ID):</strong> {{ agendamento()?.animalId }}</p>
+    <p><strong>Serviço (ID):</strong> {{ agendamento()?.servicoId }}</p>
+    <p><strong>Observações:</strong> {{ agendamento()?.observacoes }}</p>
+    <div class="acoes">
+      <button matButton="filled" type="button" (click)="iniciarEdicao()">Editar</button>
+      <button matButton="filled" type="button" (click)="excluir()">Excluir</button>
+      <button matButton="tonal" type="button" (click)="voltar()">Voltar</button>
+    </div>
+  }
+} @else {
+  <p>Agendamento não encontrado.</p>
+}

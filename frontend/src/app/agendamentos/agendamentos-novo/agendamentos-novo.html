@@ -1,0 +1,29 @@
+<h2>Novo Agendamento</h2>
+<hr />
+
+<form class="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Data e Hora</mat-label>
+    <input matInput type="datetime-local" [(ngModel)]="agendamento()!.dataHora" name="dataHora" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>ID do Animal</mat-label>
+    <input matInput type="number" [(ngModel)]="agendamento()!.animalId" name="animalId" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>ID do Serviço</mat-label>
+    <input matInput type="number" [(ngModel)]="agendamento()!.servicoId" name="servicoId" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Observações</mat-label>
+    <input matInput [(ngModel)]="agendamento()!.observacoes" name="observacoes" />
+  </mat-form-field>
+
+  <div class="acoes">
+    <button matButton="filled" type="button" (click)="salvar()">Salvar</button>
+    <button matButton="tonal" type="button" (click)="voltar()">Cancelar</button>
+  </div>
+</form>

@@ -1,0 +1,37 @@
+<h2>Detalhes do Serviço</h2>
+<hr />
+
+@if (servico()) {
+  @if (emEdicao()) {
+    <form class="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="servico()!.nome" name="nome" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Descrição</mat-label>
+        <input matInput [(ngModel)]="servico()!.descricao" name="descricao" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Preço</mat-label>
+        <input matInput type="number" [(ngModel)]="servico()!.preco" name="preco" />
+      </mat-form-field>
+      <div class="acoes">
+        <button matButton="filled" type="button" (click)="salvar()">Salvar</button>
+        <button matButton="tonal" type="button" (click)="cancelarEdicao()">Cancelar</button>
+      </div>
+    </form>
+  } @else {
+    <p><strong>ID:</strong> {{ servico()?.id }}</p>
+    <p><strong>Nome:</strong> {{ servico()?.nome }}</p>
+    <p><strong>Descrição:</strong> {{ servico()?.descricao }}</p>
+    <p><strong>Preço:</strong> {{ servico()?.preco | currency:'BRL' }}</p>
+    <div class="acoes">
+      <button matButton="filled" type="button" (click)="iniciarEdicao()">Editar</button>
+      <button matButton="filled" type="button" (click)="excluir()">Excluir</button>
+      <button matButton="tonal" type="button" (click)="voltar()">Voltar</button>
+    </div>
+  }
+} @else {
+  <p>Serviço não encontrado.</p>
+}

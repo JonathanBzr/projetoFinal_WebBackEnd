@@ -1,0 +1,27 @@
+<h2>Serviços</h2>
+<button matButton="filled" type="button" (click)="novo()">Novo Serviço</button>
+<hr />
+
+<table mat-table [dataSource]="servicos()" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let e">{{ e.id }}</td>
+  </ng-container>
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef>Nome</th>
+    <td mat-cell *matCellDef="let e">{{ e.nome }}</td>
+  </ng-container>
+  <ng-container matColumnDef="descricao">
+    <th mat-header-cell *matHeaderCellDef>Descrição</th>
+    <td mat-cell *matCellDef="let e">{{ e.descricao }}</td>
+  </ng-container>
+  <ng-container matColumnDef="preco">
+    <th mat-header-cell *matHeaderCellDef>Preço</th>
+    <td mat-cell *matCellDef="let e">{{ e.preco | currency:'BRL' }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="abrir(row)" class="linha-clicavel"></tr>
+</table>
+
+<h3>Total: {{ servicos().length }}</h3>

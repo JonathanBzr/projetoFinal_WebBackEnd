@@ -1,0 +1,34 @@
+<h2>Novo Animal</h2>
+<hr />
+
+<form class="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="animal()!.nome" name="nome" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Espécie</mat-label>
+    <input matInput [(ngModel)]="animal()!.especie" name="especie" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Raça</mat-label>
+    <input matInput [(ngModel)]="animal()!.raca" name="raca" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Idade (anos)</mat-label>
+    <input matInput type="number" [(ngModel)]="animal()!.idade" name="idade" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>ID do Cliente (dono)</mat-label>
+    <input matInput type="number" [(ngModel)]="animal()!.clienteId" name="clienteId" />
+  </mat-form-field>
+
+  <div class="acoes">
+    <button matButton="filled" type="button" (click)="salvar()">Salvar</button>
+    <button matButton="tonal" type="button" (click)="voltar()">Cancelar</button>
+  </div>
+</form>

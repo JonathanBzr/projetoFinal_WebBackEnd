@@ -1,0 +1,24 @@
+<h2>Novo Serviço</h2>
+<hr />
+
+<form class="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="servico()!.nome" name="nome" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Descrição</mat-label>
+    <input matInput [(ngModel)]="servico()!.descricao" name="descricao" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Preço</mat-label>
+    <input matInput type="number" [(ngModel)]="servico()!.preco" name="preco" />
+  </mat-form-field>
+
+  <div class="acoes">
+    <button matButton="filled" type="button" (click)="salvar()">Salvar</button>
+    <button matButton="tonal" type="button" (click)="voltar()">Cancelar</button>
+  </div>
+</form>
